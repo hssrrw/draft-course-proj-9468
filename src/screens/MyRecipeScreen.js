@@ -75,17 +75,19 @@ export default function MyRecipeScreen() {
 
   return (
     <View style={styles.container}>
-      {/* Back Button */}
-      <TouchableOpacity
-        onPress={() => navigation.goBack()}
-        style={styles.backButton}
-      >
-        <Text style={styles.backButtonText}>{"Back"}</Text>
-      </TouchableOpacity>
+      <View style={styles.row}>
+        {/* Back Button */}
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={styles.backButton}
+        >
+          <Text style={styles.backButtonText}>{"Back"}</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity onPress={handleAddrecipe} style={styles.addButton}>
-        <Text style={styles.addButtonText}>Add New recipe</Text>
-      </TouchableOpacity>
+        <TouchableOpacity onPress={handleAddrecipe} style={styles.addButton}>
+          <Text style={styles.addButtonText}>Add New recipe</Text>
+        </TouchableOpacity>
+      </View>
 
       {loading ? (
         <ActivityIndicator size="large" color="#f59e0b" />
@@ -160,6 +162,11 @@ const styles = StyleSheet.create({
     padding: wp(4),
     backgroundColor: "#F9FAFB",
   },
+  row: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
   backButton: {
     marginBottom: hp(1.5),
   },
@@ -173,7 +180,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 5,
     width: 300,
-    marginLeft: 500,
+    // marginLeft: 500,
     // marginBottom: hp(2),
   },
   addButtonText: {
